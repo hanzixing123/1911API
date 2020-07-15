@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Han;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-
+use GuzzleHttp\Client;
 class TokenController extends Controller
 {
     //
@@ -36,6 +36,25 @@ class TokenController extends Controller
         curl_close($ch);
         echo  $response;
     }
+
+    public function  lianxi(){
+               //$res=uniqid();
+            $res="バカ野郎";
+                echo $res;
+    }
+    public  function token3(){
+        
+            $url="https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=wx359dcf3d654a9c7d&secret=88406e8666aa03356bbbc64a2bb3474d";
+            $client= new Client();
+            $response=$client->request("GET",$url);
+            $data=$response->getBody();
+          echo   $data;die;
+            //var_dump($response);
+
+
+    }
+
+
 
 
 
