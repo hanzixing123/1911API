@@ -15,4 +15,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::any("/token","Han\TokenController@token");
+Route::any("/token2","Han\TokenController@token2");
+
 
